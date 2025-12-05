@@ -1,61 +1,100 @@
 # Circular Playlist C++ Project
-This project implements a circular playlist using a circular singly linked list in C++. The playlist allows songs to be added, removed, shuffled, and played in a continuous loop. It demonstrates understanding of pointer manipulation, dynamic memory, and object-oriented design.
+Circular Playlist C++ Project
+Project Overview
+
+This project implements a simple music playlist system using a circular linked list in C++. The goal was to build a playlist where songs loop continuously, allowing forward navigation, backward navigation, and a shuffle feature. The project demonstrates understanding of dynamic memory, pointers, node structures, and modular program design.
 
 Data Structure Implemented
 
-The core of the project is a circular singly linked list. Each node stores a song title and a pointer to the next node. The final node always connects back to the first, forming a circle.
+A circular singly linked list is used to store and navigate through songs.
+Each song is represented as a node containing:
 
-How the Circular Playlist Works
+A song title
 
-The CircularPlaylist class provides the main operations:
+A pointer to the next node
+Because the last song points back to the first song, the playlist loops forever.
+
+How the Data Structure Works 
+
+
+[Song 1] → [Song 2] → [Song 3]
+   
+      ↑                 ↓
+      
+←←←←←← circular loop ←←←←←←
+
+
+And the structure of each node:
+
++-----------+
+|  title    |
+|  next ----|---->
++-----------+
+
+File Structure
+CircularPlaylist.h      → Class definition and node structure
+CircularPlaylist.cpp    → Method implementations (add, remove, next, prev, shuffle)
+main.cpp                → Driver program that runs the playlist
+
+Description of the Data Structure
+
+The circular playlist behaves like a normal list, except it never stops.
+When the program reaches the last song and you call nextSong(), it loops back to the first.
+This makes it ideal for media queues, where continuous looping is required.
+
+Key features implemented:
 
 Add a new song
 
-Remove a song by title
+Display all songs
 
 Move to the next or previous song
 
-Shuffle by randomly advancing a number of steps
+Reset to the head
 
-Display the entire playlist
+Shuffle to a random song
 
-Reset the current pointer back to the head
-
-Because the list is circular, navigating forward never stops. Once you reach the last song, the next pointer loops back to the first.
-
-Circular Playlist Diagram
-
-[Song 1] → [Song 2] → [Song 3]
-     
-      ↑                 ↓
-      ←←←←← circular loop ←←←←←
-
-
-This diagram shows that the last node points back to the first, creating a continuous loop.
-
-Files Included
-
-CircularPlaylist.h – class definition
-
-CircularPlaylist.cpp – method implementations
-
-main.cpp – driver program with a menu interface
+Automatically loop back to the beginning
 
 How to Run the Program
-If using Linux / Mac / VS Code terminal:
-g++ main.cpp CircularPlaylist.cpp -o playlist
+
+If you want to build and run the program locally:
+
+1. Compile
+g++ CircularPlaylist.cpp main.cpp -o playlist
+
+2. Run
 ./playlist
 
-On Windows (MinGW or WSL):
-g++ main.cpp CircularPlaylist.cpp -o playlist.exe
-playlist.exe
+If running in VS Code or Jupyter
 
-What the Program Does
+Just run the file normally using the terminal you have already set up.
 
-When you run the program, it opens a text-based menu that lets you add songs, remove songs, shuffle the playlist, move forward or backward, and print all songs. You can also reset to the first song. The circular structure ensures playback never reaches a dead end.
+If the Instructor Wants to See the Program Running
 
-Purpose of the Project
+If compiling is not possible on their end, I recommend either:
 
+Uploading a short video demo to Google Drive/YouTube, or
+
+Adding screenshots of the program running in your terminal
+
+Both are acceptable based on the assignment instructions.
+
+Why This Project Matters
+
+This project shows practical use of:
+
+Pointers
+
+Dynamic memory
+
+Structs and classes
+
+Linked data structures
+
+Modular programming
+
+It also demonstrates the ability to design a functional system rather than just isolated functions.
 I built this project to practice circular linked lists, pointer handling, class design, and dynamic memory management in C++. It also served as a hands-on way to learn how circular structures behave in real applications such as music players.
 
 Instructor Access
